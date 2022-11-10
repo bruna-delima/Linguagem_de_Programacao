@@ -1,0 +1,124 @@
+/******************************************************************
+
+Bruna de Lima Gregorio - 23/09/2022
+Classe Encapsulada
+
+******************************************************************/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+
+            double media1, soma1;
+
+            media1 = (4.500 + 7.755 + 1.500 + 9.965);
+            soma1 = media1 / 4;
+
+            Console.Write("Media Salarial= \r\n " + soma1);
+            Console.Write(" \r\nOs funcionarios Pedro e Lucas recebem um salário acima da média ");
+
+
+
+            Funcionario p1 = new Funcionario(‘’Leonardo’’, 29, ‘F’’);
+            Funcionario p2 = new Funcionario("Pedro", 26, 'F');
+            Funcionario p3 = new Funcionario("Fabio", 23, 'F');
+            Funcionario p4 = new Funcionario("Lucas", 21, 'F');
+
+            p1.setNome("\r\nLeonardo");
+            p2.setNome("Pedro");
+            p3.setNome("Fabio");
+            p4.setNome("Lucas");
+
+            p1.setMatricula(111111);
+            p2.setMatricula(222222);
+            p3.setMatricula(333333);
+            p4.setMatricula(444444);
+
+            p1.setSalario(4.500);
+            p2.setSalario(7.755);
+            p3.setSalario(1.500);
+            p4.setSalario(9.965);
+
+            Console.WriteLine(p1.getNome() + "A matrícula é: " + p1.getMatricula() + "  O salário é: " + p1.getSalario());
+            Console.WriteLine(p2.getNome() + "A matrícula é: " + p2.getMatricula() + "  O salário é: " + p2.getSalario());
+            Console.WriteLine(p3.getNome() + "A matrícula é: " + p3.getMatricula() + "  O salário é: " + p3.getSalario());
+            Console.WriteLine(p4.getNome() + "A matrícula é: " + p4.getMatricula() + "  O salário é: " + p4.getSalario());
+
+            Console.ReadKey();
+
+           
+
+         
+        }
+       
+       
+
+
+    }
+}
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Funcionario
+    {
+        private string nome;
+        private int matricula;
+        private double salario;
+
+
+        public Funcionario(string nome, int matricula, float salario)
+        {
+            this.nome = nome;
+            this.matricula = matricula;
+            this.salario = salario;
+        }
+
+        public Funcionario()
+        {
+        }
+
+        public void setNome(String nome)
+        {
+            this.nome = nome;
+        }
+
+        public String getNome()
+        {
+            return (this.nome);
+        }
+
+
+        //get e set matricula
+        public void setMatricula(int matricula) { this.matricula = matricula; }
+        public int getMatricula() { return this.matricula; }
+
+        // get e set salario
+        public void setSalario(double salario) { this.salario = salario; }
+        public double getSalario() { return this.salario; }
+    }
+}
+
+
+
